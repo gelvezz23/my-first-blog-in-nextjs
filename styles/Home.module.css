@@ -67,17 +67,18 @@
 
 .grid {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 800px;
+  max-width: 1024px;
 }
 
 .card {
   margin: 1rem;
   padding: 1.5rem;
   width: 17rem;
-  height: 11rem;
+  height: auto;
+  max-height: 15rem;
   text-align: left;
   color: inherit;
   text-decoration: none;
@@ -114,6 +115,14 @@
   margin-left: 0.5rem;
 }
 
+.containerCategories{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  
+}
 @media (max-width: 600px) {
   .grid {
     width: 100%;

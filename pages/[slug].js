@@ -2,9 +2,15 @@ import React from "react";
 import { MDXRemote } from "next-mdx-remote";
 import { getFileBySlug, getFiles } from "../lib/mdx";
 import MDXcomponentsJs from "./components/MDXcomponents.js";
-
+import styles from "./../styles/Slug.module.css";
 function Post({ source, frontmatter }) {
-  return <MDXRemote {...source} components={MDXcomponentsJs} />;
+  return (
+    <section className={styles.container}>
+      <div className={styles.containerSlug}>
+        <MDXRemote {...source} components={MDXcomponentsJs} />
+      </div>
+    </section>
+  );
 }
 export const getStaticProps = async ({ params }) => {
   const { source, frontmatter } = await getFileBySlug(params.slug);
