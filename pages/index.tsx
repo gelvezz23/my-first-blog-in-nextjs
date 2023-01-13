@@ -4,7 +4,7 @@ import Link from "next/link";
 import { getAllFilesMetadata } from "../lib/mdx";
 import styles from "../styles/Home.module.css";
 import Icon from "./../public/assets/icon.png";
-
+import Asidebar from "./../components/Asidebar";
 import Aboutme from "./../components/Categories/Aboutme";
 import SoftwareArquitecture from "./../components/Categories/SoftwareArquitecture";
 import ReactCategorie from "./../components/Categories/ReactCategorie";
@@ -17,34 +17,39 @@ export default function Home({ posts }) {
   const react = posts.filter((post) => post.categorie === "react");
 
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Mi blog - carlos mario gomez gelvez</title>
-        <meta
-          name="description"
-          content="Un blog creado a partir de mi conocimiento y estudio a lo largo de mi vida"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <>
+      <div className={styles.container}>
+        <Head>
+          <title>Mi blog - carlos mario gomez gelvez</title>
+          <meta
+            name="description"
+            content="Un blog creado a partir de mi conocimiento y estudio a lo largo de mi vida"
+          />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
 
-      <main className={styles.main}>
-        <Image
-          src={Icon}
-          alt="Picture of the author"
-          width={300}
-          height={300}
-        />
-        <h1 className={styles.title}>
-          Bienvenido a mi primer blog <br />
-          <Link href="#">Soy Carlos!</Link>
-        </h1>
-        <section className={styles.containerCategories}>
-          <Aboutme posts={aboutme} />
-          <SoftwareArquitecture posts={softwareArquitecture} />
-          <ReactCategorie posts={react} />
-        </section>
-      </main>
-    </div>
+        <div className={styles.main}>
+          <Image
+            src={Icon}
+            alt="Picture of the author"
+            width={300}
+            height={300}
+          />
+          <h1 className={styles.title}>
+            Bienvenido a mi primer blog <br />
+            <Link href="#">Soy Carlos!</Link>
+          </h1>
+          <section className={styles.containerCategories}>
+            <Aboutme posts={aboutme} />
+            <SoftwareArquitecture posts={softwareArquitecture} />
+            <ReactCategorie posts={react} />
+          </section>
+        </div>
+      </div>
+      <div className="section">
+        <Asidebar post={posts} />
+      </div>
+    </>
   );
 }
 

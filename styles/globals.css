@@ -22,3 +22,15 @@ a:hover{
 * {
   box-sizing: border-box;
 }
+
+body .sidebar{
+  left: -225px;
+}
+body.active .sidebar{
+  left: 0px;
+}
+
+body.active .section{
+  margin-left: 0px;
+  width: 100%;
+}

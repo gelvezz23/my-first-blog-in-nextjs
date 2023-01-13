@@ -1,28 +1,35 @@
 import React from "react";
 import Link from "next/link";
-import styles from "./../../styles/Home.module.css";
+import {
+  Card,
+  DateContent,
+  CategorieTitle,
+  Title,
+  Description,
+  Grid,
+} from "./styles";
 
-function ReactCategorie({ posts }) {
+const ReactCategorie = ({ posts }) => {
   return (
     <>
-      <div className={styles.categorieTitle}>
+      <CategorieTitle>
         <h3>React</h3>
-      </div>
-      <div className={styles.grid}>
+      </CategorieTitle>
+      <Grid>
         {posts.map((post) => {
           return (
             <Link key={post.slug} href={`/${post.slug}`}>
-              <a className={styles.card}>
-                <h2>{post.title} &rarr;</h2>
-                <p>{post.description}</p>
-                <div className={styles.date}>{post.date}</div>
-              </a>
+              <Card>
+                <Title>{post.title} &rarr;</Title>
+                <Description>{post.description}</Description>
+                <DateContent>{post.date}</DateContent>
+              </Card>
             </Link>
           );
         })}
-      </div>
+      </Grid>
     </>
   );
-}
+};
 
 export default ReactCategorie;
