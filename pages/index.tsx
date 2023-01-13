@@ -4,7 +4,6 @@ import Link from "next/link";
 import { getAllFilesMetadata } from "../lib/mdx";
 import styles from "../styles/Home.module.css";
 import Icon from "./../public/assets/icon.png";
-import Asidebar from "./../components/Asidebar";
 import Aboutme from "./../components/Categories/Aboutme";
 import SoftwareArquitecture from "./../components/Categories/SoftwareArquitecture";
 import ReactCategorie from "./../components/Categories/ReactCategorie";
@@ -45,9 +44,6 @@ export default function Home({ posts }) {
             <ReactCategorie posts={react} />
           </section>
         </div>
-      </div>
-      <div className="section">
-        <Asidebar post={posts} />
       </div>
     </>
   );

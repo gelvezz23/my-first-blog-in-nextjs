@@ -10,7 +10,6 @@ import {
   NavbarContainer,
 } from "./styles";
 import Image from "next/image";
-import Asidebar from "../../Asidebar";
 
 const Navbar = () => {
   const router = useRouter();
